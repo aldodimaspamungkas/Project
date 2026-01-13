@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GACOR88 | SITUS SLOT GACOR SERVER KAMBOJA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #f3ce5e;
+            --gold-gradient: linear-gradient(180deg, #fbf5b7 0%, #bf953f 100%);
+            --red-gradient: linear-gradient(180deg, #ff0000 0%, #990000 100%);
+            --black-bg: #0d0d0d;
+            --panel-bg: #1a1a1a;
+        }
+
+        body {
+            background-color: #000;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            padding-bottom: 70px; /* Space buat menu bawah */
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        .top-header {
+            background: var(--black-bg);
+            border-bottom: 1px solid #333;
+            padding: 10px 0;
+        }
+        .logo-text {
+            font-family: 'Anton', sans-serif;
+            font-size: 28px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- MARQUEE (Teks Jalan) --- */
+        .marquee-container {
+            background: linear-gradient(90deg, #000 0%, #333 50%, #000 100%);
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            color: var(--gold);
+            font-weight: bold;
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* --- CAROUSEL BANNER --- */
+        .carousel-item img {
+            border-radius: 10px;
+            border: 2px solid #333;
+        }
+
+        /* --- MENU ICON SCROLL --- */
+        .menu-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 15px 0;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .menu-scroll::-webkit-scrollbar { display: none; }
+        .menu-item {
+            display: inline-block;
+            width: 70px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .menu-icon {
+            width: 50px;
+            height: 50px;
+            background: #222;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+            border: 1px solid #444;
+            font-size: 24px;
+            color: var(--gold);
+        }
+        .active-menu .menu-icon {
+            background: var(--gold-gradient);
+            color: #000;
+            border: 1px solid #fff;
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        /* --- SLOT GRID --- */
+        .slot-card {
+            background: var(--panel-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #333;
+            transition: 0.2s;
+        }
+        .slot-img {
+            width: 100%;
+            display: block;
+        }
+        .rtp-bar {
+            height: 15px;
+            background: #333;
+            margin: 5px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .rtp-fill {
+            height: 100%;
+            text-align: center;
+            font-size: 10px;
+            line-height: 15px;
+            color: #000;
+            font-weight: bold;
+        }
+        .rtp-green { background: #00ff00; width: 98%; }
+        .rtp-yellow { background: #ffff00; width: 85%; }
+
+        /* --- BOLA CARD --- */
+        .match-card {
+            background: linear-gradient(145deg, #1e1e1e, #111);
+            border: 1px solid #444;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .odds-box {
+            background: #000;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /* --- JACKPOT COUNTER --- */
+        .jackpot-box {
+            background: url('https://media.istockphoto.com/id/1193769165/vector/casino-jackpot-background.jpg?s=612x612&w=0&k=20&c=L_Q0kX1D6JvW8U7zHw3xY8y6x5v4u3t2s1r0q9p8o7n6');
+            background-size: cover;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 0 #000;
+        }
+        .jackpot-val {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.5rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- STICKY FOOTER MENU (Menu Bawah) --- */
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #111;
+            border-top: 2px solid var(--gold);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 999;
+        }
+        .nav-item {
+            text-align: center;
+            color: #888;
+            font-size: 10px;
+            text-decoration: none;
+        }
+        .nav-item i {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .nav-item.active { color: var(--gold); }
+        
+        .btn-daftar {
+            background: var(--red-gradient);
+            color: white;
+            border: none;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255,0,0,0.5);
+            animation: pulse 1.5s infinite;
+        }
+
+        /* --- Floating Widget --- */
+        .float-wa {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #25d366;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            box-shadow: 0 0 10px #25d366;
+            z-index: 990;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- ANIMASI LIST PEMENANG (VERTICAL SCROLL) --- */
+        .winner-scroll-box {
+            height: 300px; /* Tinggi area yang terlihat */
+            overflow: hidden;
+            position: relative;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+        
+        .winner-track {
+            /* Animasi jalan ke atas selama 20 detik */
+            animation: scrollUp 20s linear infinite;
+        }
+
+        /* Biar pas di-hover mouse, animasinya berhenti (biar bisa dibaca) */
+        .winner-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            /* Gerak ke atas sampe -50% (karena datanya diduplikasi jadi 2x lipat) */
+            100% { transform: translateY(-50%); } 
+        }
+
+        .winner-item {
+            border-bottom: 1px solid #222;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-text">GACOR88</div>
+            <div>
+                <button class="btn btn-outline-warning btn-sm me-1">MASUK</button>
+                <button class="btn-daftar btn-sm">DAFTAR</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left">
+            📢 INFO GACOR: SELAMAT DATANG DI GACOR88 SITUS JUDI ONLINE SERVER KAMBOJA TERPERCAYA ANTI RUNGKAD | BONUS NEW MEMBER 100% | DEPO PULSA TANPA POTONGAN | RTP SLOT HARI INI: GATES OF OLYMPUS (98%), STARLIGHT PRINCESS (97%) | MEMBER WIN: BUDI01 IDR 50JT 🔥🔥🔥
+        </marquee>
+    </div>
+
+    <div class="container mt-3">
+        <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='ZZ.png') }}" class="d-block w-100" alt="Bonus">
+                </div>
+            </div>  
+        </div>
+
+        <div class="jackpot-box">
+            <h5 class="text-white mb-0">TOTAL JACKPOT PROGRESIF</h5>
+            <div class="jackpot-val">IDR 14.520.291.500</div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="m-0 fw-bold" style="color: var(--gold);"><i class="fas fa-star"></i> SLOT GACOR HARI INI</h5>
+            <a href="#" class="text-white small text-decoration-none">LIHAT SEMUA ></a>
+        </div>
+
+        <div class="row g-2">
+            {% for s in slots %}
+            <div class="col-4 col-md-2">
+                <div class="slot-card" onclick="window.location.href='/play/{{ s.id }}'">
+                    <img src="{{ s.img }}" alt="{{ s.name }}" class="slot-img">
+                    <div class="rtp-bar">
+                        <div class="rtp-fill rtp-green" style="width: {{ s.rtp }}%;">RTP {{ s.rtp }}%</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <hr style="border-color: #555;">
+
+        <div class="d-flex justify-content-between align-items-center mb-2 mt-4">
+            <h5 class="m-0 fw-bold" style="color: var(--gold);"><i class="fas fa-futbol"></i> TARUHAN BOLA</h5>
+        </div>
+
+        <div class="row">
+            {% for m in matches %}
+            <div class="col-12 col-md-6">
+                <div class="match-card p-2 text-center position-relative">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">LIVE</span>
+                    <div class="small text-muted mb-2">{{ m.league }}</div>
+                    
+                    <div class="d-flex justify-content-between align-items-center px-3">
+                        <div style="width: 30%;">
+                            <img src="{{ m.home_img }}" height="40">
+                            <div class="small fw-bold mt-1 text-truncate">{{ m.home }}</div>
+                        </div>
+                        <div class="fw-bold text-warning h4 m-0">VS</div>
+                        <div style="width: 30%;">
+                            <img src="{{ m.away_img }}" height="40">
+                            <div class="small fw-bold mt-1 text-truncate">{{ m.away }}</div>
+                        </div>
+                    </div>
+
+                    <div class="row g-2 mt-2">
+                        <div class="col-6">
+                            <a href="/parlay/{{ m.id }}" class="d-block text-decoration-none">
+                                <div class="odds-box">HOME @ {{ m.odds_h }}</div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/parlay/{{ m.id }}" class="d-block text-decoration-none">
+                                <div class="odds-box">AWAY @ {{ m.odds_a }}</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+<div class="mt-4 mb-5">
+            <h6 class="text-center text-warning mb-3">🏆 PEMENANG TERAKHIR</h6>
+            
+            <div class="winner-scroll-box p-3">
+                <div class="winner-track">
+                    
+                   {% for w in winners %}
+                    <div class="winner-item">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ w.img }}" width="30" height="30" class="rounded-circle me-2 border border-warning">
+                            <div>
+                                <div class="text-white fw-bold">{{ w.name }}</div>
+                                <div class="text-muted" style="font-size: 0.7em;">{{ w.game }}</div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <div class="text-success fw-bold">IDR {{ w.win }}</div>
+                            <small class="text-secondary" style="font-size: 0.7em;">
+                                <i class="far fa-clock"></i> {{ w.time }} WIB
+                            </small>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% for w in winners %}
+                    <div class="winner-item">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ w.img }}" width="30" height="30" class="rounded-circle me-2 border border-warning">
+                            <div>
+                                <div class="text-white fw-bold">{{ w.name }}</div>
+                                <div class="text-muted" style="font-size: 0.7em;">{{ w.game }}</div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <div class="text-success fw-bold">IDR {{ w.win }}</div>
+                            <small class="text-secondary" style="font-size: 0.7em;">
+                                <i class="far fa-clock"></i> {{ w.time }} WIB
+                            </small>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% for w in winners %}
+                    <div class="winner-item">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ w.img }}" width="30" height="30" class="rounded-circle me-2 border border-warning">
+                            <div>
+                                <div class="text-white fw-bold">{{ w.name }}</div>
+                                <div class="text-muted" style="font-size: 0.7em;">{{ w.game }}</div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <div class="text-success fw-bold">IDR {{ w.win }}</div>
+                            <small class="text-secondary">Barusan</small>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    <div class="mobile-nav">
+        <a href="/" class="nav-item active">
+            <i class="fas fa-home"></i>
+            HOME
+        </a>
+        <a href="/slots" class="nav-item">
+            <i class="fas fa-dice"></i>
+            SLOTS
+        </a>
+        <div class="nav-item" style="position: relative; top: -25px;">
+            <div style="background: var(--red-gradient); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #000; box-shadow: 0 0 10px rgba(255,0,0,0.8);">
+                <i class="fas fa-wallet text-white" style="font-size: 24px; margin: 0;"></i>
+            </div>
+            <span style="color: white; font-weight: bold; font-size: 11px;">DEPOSIT</span>
+        </div>
+        <a href="/parlay/nav-menu" class="nav-item">
+            <i class="fas fa-futbol"></i>
+            PARLAY
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-headset"></i>
+            LIVECHAT
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

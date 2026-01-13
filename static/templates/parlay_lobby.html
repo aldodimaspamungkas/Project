@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sportbook - GACOR88</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { background-color: #0d0d0d; color: white; font-family: 'Rajdhani', sans-serif; padding-bottom: 80px; }
+        
+        /* HEADER */
+        .page-header { background: #1a1a1a; padding: 15px; border-bottom: 2px solid #f3ce5e; position: sticky; top: 0; z-index: 99; }
+        .page-title { font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; color: #f3ce5e; }
+
+        /* LIST ITEM */
+        .country-list { list-style: none; padding: 0; margin: 0; }
+        .country-item {
+            background: #151515;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .country-item:hover { background: #222; padding-left: 20px; } /* Efek geser pas hover */
+        
+        .flag-wrapper { width: 30px; display: inline-block; text-align: center; margin-right: 10px; }
+        .country-name { font-size: 1rem; font-weight: 600; }
+        
+        .count-badge {
+            background: #333;
+            color: #aaa;
+            padding: 2px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            min-width: 35px;
+            text-align: center;
+        }
+        .country-item:hover .count-badge { background: #f3ce5e; color: #000; font-weight: bold; }
+
+        /* MENU BAWAH */
+        .mobile-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: #111; border-top: 2px solid #f3ce5e;
+            display: flex; justify-content: space-around; padding: 10px 0; z-index: 999;
+        }
+        .nav-item { text-align: center; color: #888; font-size: 10px; text-decoration: none; }
+        .nav-item i { font-size: 20px; display: block; margin-bottom: 3px; }
+        .nav-item.active { color: #f3ce5e; }
+    </style>
+</head>
+<body>
+
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <a href="/" class="text-white"><i class="fas fa-arrow-left"></i></a>
+        <div class="page-title"><i class="fas fa-futbol"></i> SPORTBOOK</div>
+        <i class="fas fa-search text-muted"></i>
+    </div>
+
+    <div class="container-fluid p-0">
+        
+        <div class="d-flex p-2 bg-dark mb-1">
+            <button class="btn btn-sm btn-warning fw-bold flex-fill me-1">Winner</button>
+            <button class="btn btn-sm btn-outline-secondary flex-fill me-1">Handicap</button>
+            <button class="btn btn-sm btn-outline-secondary flex-fill">Over/Under</button>
+        </div>
+
+        <ul class="country-list">
+            {% for c in categories %}
+            <li class="country-item" onclick="alert('Masuk ke Liga {{ c.country }} (Coming Soon)')">
+                <div class="d-flex align-items-center">
+                    <div class="flag-wrapper">
+                        {% if c.iso == 'un' %}
+                            <i class="fas fa-globe"></i>
+                        {% else %}
+                            <span class="flag-icon flag-icon-{{ c.iso }}"></span>
+                        {% endif %}
+                    </div>
+                    <span class="country-name">{{ c.country }}</span>
+                </div>
+                <div class="count-badge">{{ c.count }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <div style="height: 50px;"></div>
+    </div>
+
+    <div class="mobile-nav">
+        <a href="/" class="nav-item">
+            <i class="fas fa-home"></i> HOME
+        </a>
+        <a href="/slots" class="nav-item">
+            <i class="fas fa-dice"></i> SLOTS
+        </a>
+        <div class="nav-item" style="position: relative; top: -25px;">
+            <div style="background: linear-gradient(180deg, #ff0000 0%, #990000 100%); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #000; box-shadow: 0 0 10px rgba(255,0,0,0.8);">
+                <i class="fas fa-wallet text-white" style="font-size: 24px; margin: 0;"></i>
+            </div>
+            <span style="color: white; font-weight: bold; font-size: 11px;">DEPOSIT</span>
+        </div>
+        <a href="/parlay/nav-menu" class="nav-item active"> <i class="fas fa-futbol"></i> PARLAY
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-headset"></i> LIVECHAT
+        </a>
+    </div>
+
+</body>
+</html>

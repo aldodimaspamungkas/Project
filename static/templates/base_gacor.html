@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAGA69 | SITUS PASTI BAYAR</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root { --bg: #050505; --gold: #ffd700; --red: #e60000; }
+        body { background-color: var(--bg); color: white; font-family: 'Roboto', sans-serif; padding-bottom: 70px; }
+        
+        /* NAVBAR */
+        .navbar-brand { font-family: 'Anton'; font-size: 1.8rem; background: linear-gradient(to bottom, #ffd700, #ff8c00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* UTILS */
+        .btn-gold { background: linear-gradient(180deg, #ffd700, #b8860b); color: black; font-weight: bold; border: 1px solid white; }
+        .blink { animation: blink 0.8s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        /* TICKER */
+        .ticker-wrap { background: var(--gold); overflow: hidden; white-space: nowrap; padding: 5px 0; }
+        .ticker { display: inline-block; animation: scroll 20s linear infinite; color: black; font-weight: bold; font-size: 0.9rem; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* BOTTOM NAV */
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: #111; border-top: 2px solid var(--gold); display: flex; justify-content: space-around; padding: 10px 0; z-index: 99; }
+        .nav-item { color: #666; text-align: center; font-size: 0.7rem; text-decoration: none; }
+        .nav-item.active { color: var(--gold); }
+        .nav-item i { font-size: 1.4rem; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar sticky-top bg-black border-bottom border-warning">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="/">NAGA69</a>
+            <div>
+                <button class="btn btn-sm btn-gold rounded-pill px-3 me-1">LOGIN</button>
+                <button class="btn btn-sm btn-danger fw-bold rounded-pill px-3 blink">DAFTAR</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            📢 INFO GACOR: SERVER KAMBOJA SEDANG WANGI 🌸 RTP SLOT 98% 🔥 DEPO 25RB JADI 50RB 🔥 PARLAY BOLA JALAN 🔥 MAXWIN X5000 MENANTI ANDA!
+        </div>
+    </div>
+
+    <main class="container py-3">
+        {% block content %}{% endblock %}
+    </main>
+
+    <div class="bottom-nav">
+        <a href="/" class="nav-item active"><i class="ph ph-house"></i>HOME</a>
+        <a href="/" class="nav-item"><i class="ph ph-game-controller"></i>SLOT</a>
+        <a href="/" class="nav-item"><i class="ph ph-soccer-ball"></i>BOLA</a>
+        <a href="#" class="nav-item"><i class="ph ph-whatsapp-logo"></i>CS 24/7</a>
+    </div>
+
+</body>
+</html>

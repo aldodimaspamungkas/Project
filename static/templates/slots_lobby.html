@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lobby Slots - GACOR88</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #000; color: white; font-family: 'Rajdhani', sans-serif; padding-bottom: 80px; }
+        
+        /* HEADER */
+        .page-header { background: #111; padding: 15px; border-bottom: 1px solid #333; position: sticky; top: 0; z-index: 99; }
+        .search-box { background: #222; border: 1px solid #444; color: white; border-radius: 20px; padding: 5px 15px; width: 100%; }
+        
+        /* PROVIDER TABS */
+        .provider-scroll { overflow-x: auto; white-space: nowrap; padding: 10px 0; -ms-overflow-style: none; scrollbar-width: none; }
+        .provider-scroll::-webkit-scrollbar { display: none; }
+        .prov-pill {
+            display: inline-block; padding: 8px 20px; margin-right: 8px;
+            background: #222; border: 1px solid #444; border-radius: 5px;
+            font-size: 0.8rem; font-weight: bold; color: #aaa; cursor: pointer;
+        }
+        .prov-pill.active { background: #f3ce5e; color: #000; border-color: #f3ce5e; }
+
+        /* SLOT GRID (Sama kayak Home) */
+        .slot-card {
+            background: #1a1a1a; border-radius: 8px; overflow: hidden;
+            position: relative; border: 1px solid #333; transition: 0.2s;
+        }
+        .rtp-badge {
+            position: absolute; top: 5px; right: 5px; background: rgba(0,0,0,0.8);
+            color: #00ff00; font-size: 0.6rem; padding: 2px 4px; border-radius: 3px; border: 1px solid #00ff00;
+        }
+        .provider-label { font-size: 0.6rem; color: #888; text-transform: uppercase; margin-top: 5px; }
+        .game-title { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* MENU BAWAH (WAJIB ADA) */
+        .mobile-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: #111; border-top: 2px solid #f3ce5e;
+            display: flex; justify-content: space-around; padding: 10px 0; z-index: 999;
+        }
+        .nav-item { text-align: center; color: #888; font-size: 10px; text-decoration: none; }
+        .nav-item i { font-size: 20px; display: block; margin-bottom: 3px; }
+        .nav-item.active { color: #f3ce5e; }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <a href="/" class="text-white"><i class="fas fa-chevron-left"></i></a>
+            <span class="fw-bold" style="letter-spacing: 1px;">LOBBY SLOTS</span>
+            <i class="fas fa-filter text-warning"></i>
+        </div>
+        <input type="text" class="search-box" placeholder="Cari game favoritmu...">
+    </div>
+
+<div class="container">
+        <div class="provider-scroll">
+            <div class="prov-pill active" onclick="filterGames('ALL', this)">SEMUA</div>
+            <div class="prov-pill" onclick="filterGames('PRAGMATIC', this)">PRAGMATIC</div>
+            <div class="prov-pill" onclick="filterGames('NOLIMIT CITY', this)">NOLIMIT CITY</div>
+            <div class="prov-pill" onclick="filterGames('HACKSAW GAMING', this)">HACKSAW</div>
+            <div class="prov-pill" onclick="filterGames(`PLAY'N GO`, this)">PLAY'N GO</div>
+            <div class="prov-pill" onclick="filterGames('VOLTENT', this)">VOLTENT</div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row g-2" id="gameGrid">
+            {% for g in games %}
+            <div class="col-4 col-md-2 game-item" data-provider="{{ g.provider }}">
+                <div class="slot-card p-0" onclick="window.location.href='/play/{{ g.id }}'">
+                    <img src="{{ g.img }}" class="w-100">
+                    <div class="rtp-badge">RTP {{ g.rtp }}%</div>
+                </div>
+                <div class="text-center mt-1">
+                    <div class="game-title">{{ g.name }}</div>
+                    <div class="provider-label">{{ g.provider }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="mobile-nav">
+        <a href="/" class="nav-item">
+            <i class="fas fa-home"></i> HOME
+        </a>
+        <a href="/slots" class="nav-item active">
+            <i class="fas fa-dice"></i> SLOTS
+        </a>
+        <div class="nav-item" style="position: relative; top: -25px;">
+            <div style="background: linear-gradient(180deg, #ff0000 0%, #990000 100%); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #000; box-shadow: 0 0 10px rgba(255,0,0,0.8);">
+                <i class="fas fa-wallet text-white" style="font-size: 24px; margin: 0;"></i>
+            </div>
+            <span style="color: white; font-weight: bold; font-size: 11px;">DEPOSIT</span>
+        </div>
+        <a href="/parlay/nav-menu" class="nav-item">
+            <i class="fas fa-futbol"></i> PARLAY
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-headset"></i> LIVECHAT
+        </a>
+    </div>
+
+    <script>
+        function filterGames(provider, element) {
+            // 1. Ganti warna tombol aktif
+            document.querySelectorAll('.prov-pill').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+
+            // 2. Filter game list
+            let games = document.querySelectorAll('.game-item');
+            games.forEach(game => {
+                if (provider === 'ALL' || game.getAttribute('data-provider') === provider) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
